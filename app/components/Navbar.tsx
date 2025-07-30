@@ -1,18 +1,25 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
-import { checkUser } from "@/lib/checkUser";
+import {
+  useUser,
+  SignInButton,
+  SignedIn,
+  SignedOut,
+  UserButton,
+} from "@clerk/nextjs";
 import ThemeToggle from "./ThemeToggle";
 import { Home, Info, Phone, Menu, LogIn } from "lucide-react";
-import { SignInButton, SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
 
-export default async function Navbar() {
-  const user = await checkUser();
+const navLinks = [
+  { label: "Home", href: "/", icon: <Home className="w-4 h-4" /> },
+  { label: "About", href: "/about", icon: <Info className="w-4 h-4" /> },
+  { label: "Contact", href: "/contact", icon: <Phone className="w-4 h-4" /> },
+];
 
-  const navLinks = [
-    { label: "Home", href: "/", icon: <Home className="w-4 h-4" /> },
-    { label: "About", href: "/about", icon: <Info className="w-4 h-4" /> },
-    { label: "Contact", href: "/contact", icon: <Phone className="w-4 h-4" /> },
-  ];
+export default function Navbar() {
+  const { isSignedIn } = useUser();
 
   return (
     <header className="sticky top-0 z-50 w-full bg-white/90 dark:bg-gray-900/90 backdrop-blur-md border-b border-gray-200 dark:border-gray-700 shadow-sm">
@@ -52,8 +59,7 @@ export default async function Navbar() {
         <div className="flex items-center gap-3">
           <ThemeToggle />
 
-          {/* Signed In */}
-          <SignedIn>
+          {isSignedIn ? (
             <div className="p-0.5 rounded-lg bg-gradient-to-r from-emerald-100/50 to-green-100/50 dark:from-emerald-900/20 dark:to-green-900/20 border border-emerald-200/30 dark:border-emerald-700/30">
               <UserButton
                 afterSignOutUrl="/"
@@ -65,17 +71,14 @@ export default async function Navbar() {
                 }}
               />
             </div>
-          </SignedIn>
-
-          {/* Signed Out */}
-          <SignedOut>
+          ) : (
             <SignInButton mode="modal">
               <button className="flex items-center gap-2 text-sm font-semibold bg-gradient-to-r from-emerald-500 via-green-500 to-teal-500 text-white px-4 py-2 rounded-lg shadow hover:shadow-md transition hover:scale-[1.02] active:scale-95">
                 <LogIn className="w-4 h-4" />
                 Sign In
               </button>
             </SignInButton>
-          </SignedOut>
+          )}
         </div>
       </div>
 
@@ -114,16 +117,13 @@ export default async function Navbar() {
               </Link>
             ))}
 
-            {/* Mobile Auth */}
-            <SignedOut>
+            {!isSignedIn ? (
               <SignInButton mode="modal">
                 <button className="block w-full text-center bg-gradient-to-r from-emerald-500 via-green-500 to-teal-500 text-white px-4 py-2 rounded-lg text-sm font-semibold shadow hover:shadow-md transition hover:scale-[1.02]">
                   Sign In
                 </button>
               </SignInButton>
-            </SignedOut>
-
-            <SignedIn>
+            ) : (
               <div className="mt-3 p-3 flex justify-center bg-gradient-to-r from-emerald-100/50 to-green-100/50 dark:from-emerald-900/20 dark:to-green-900/20 border border-emerald-200/30 dark:border-emerald-700/30 rounded-lg">
                 <UserButton
                   afterSignOutUrl="/"
@@ -135,7 +135,7 @@ export default async function Navbar() {
                   }}
                 />
               </div>
-            </SignedIn>
+            )}
           </nav>
         </details>
       </div>
