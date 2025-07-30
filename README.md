@@ -35,7 +35,7 @@
 
 ## 🖼️ Live Demo
 
-> 🔗 [Try TrackerIQ Live →](https://your-vercel-app.vercel.app)
+> 🔗 [Try TrackerIQ Live →](https://track-iq.vercel.app)
 
 ![Preview](https://github.com/soumojit622/TrackIQ/blob/master/public/banner.jpg)
 
@@ -76,16 +76,6 @@ Backed by ChatGPT through OpenRouter — TrackerIQ detects patterns and gives yo
 - 🔔 Smart monthly reminders & alerts
 - 📊 Export reports as PDF or Excel
 - 📱 Mobile app version (React Native + Expo)
-
----
-
-## 🙋‍♂️ Author
-
-**Soumojit Banerjee**  
-👨‍💻 B.Tech CSE | Full Stack Dev | AI Enthusiast  
-📍 Kolkata, India  
-📬 youremail@example.com  
-🔗 [LinkedIn](https://linkedin.com/in/your-link) • [GitHub](https://github.com/your-username)
 
 ---
 
