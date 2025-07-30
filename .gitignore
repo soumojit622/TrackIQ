@@ -44,3 +44,5 @@ next-env.d.ts
 /app/generated/prisma
 
 /lib/generated/prisma
+
+imp.txt
