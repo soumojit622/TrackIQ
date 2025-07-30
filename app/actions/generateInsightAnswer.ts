@@ -3,7 +3,7 @@
 import { checkUser } from '@/lib/checkUser';
 import { db } from '@/lib/db';
 import { generateAIAnswer, ExpenseRecord } from '@/lib/ai';
-import { Record as PrismaRecord } from '@prisma/client'; // ✅ Import Prisma type
+import type { Record as PrismaRecord } from '@prisma/client'; // ✅ Correct import
 
 export async function generateInsightAnswer(question: string): Promise<string> {
     try {
@@ -26,11 +26,11 @@ export async function generateInsightAnswer(question: string): Promise<string> {
             orderBy: {
                 createdAt: 'desc',
             },
-            take: 50, // Limit to recent 50 expenses for analysis
+            take: 50,
         });
 
         // Convert to format expected by AI
-        const expenseData: ExpenseRecord[] = expenses.map((expense: PrismaRecord) => ({
+        const expenseData: ExpenseRecord[] = expenses.map((expense) => ({
             id: expense.id,
             amount: expense.amount,
             category: expense.category || 'Other',
