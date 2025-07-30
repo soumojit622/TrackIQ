@@ -1,16 +1,14 @@
 "use client";
 
-import Link from "next/link";
-import Image from "next/image";
 import {
-  useUser,
   SignInButton,
-  SignedIn,
-  SignedOut,
   UserButton,
+  useUser
 } from "@clerk/nextjs";
+import { Home, Info, LogIn, Menu, Phone } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
 import ThemeToggle from "./ThemeToggle";
-import { Home, Info, Phone, Menu, LogIn } from "lucide-react";
 
 const navLinks = [
   { label: "Home", href: "/", icon: <Home className="w-4 h-4" /> },

@@ -123,7 +123,7 @@ const ExpenseStats = async () => {
               Expense Statistics
             </h3>
             <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">
-              Analyze your spending patterns and daily insights
+              Review your daily trends and financial behavior.
             </p>
           </div>
         </div>
@@ -135,11 +135,12 @@ const ExpenseStats = async () => {
               <AlertCircle className="w-5 h-5 text-red-600 dark:text-red-300" />
             </div>
             <p className="text-red-800 dark:text-red-300 font-semibold text-sm sm:text-base">
-              Failed to fetch statistics
+              Unable to Retrieve Statistics
             </p>
           </div>
           <p className="text-red-700 dark:text-red-400 text-sm ml-11">
-            We couldn't load your data right now. Please try again shortly.
+            We couldn&apos;t load your insights at this moment. Please refresh
+            the page or try again later.
           </p>
         </div>
       </div>

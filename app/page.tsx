@@ -1,11 +1,12 @@
 import { currentUser } from "@clerk/nextjs/server";
-import Guest from "./components/Guest";
-import AddNewRecord from "./components/AddNewRecord";
-import RecordChart from "./components/RecordChart";
-import ExpenseStats from "./components/ExpenseStats";
-import AIInsights from "./components/AIInsights";
-import RecordHistory from "./components/RecordHistory";
 import { CalendarDays, Clock, Sparkles, UserCheck } from "lucide-react";
+import Image from "next/image";
+import AddNewRecord from "./components/AddNewRecord";
+import AIInsights from "./components/AIInsights";
+import ExpenseStats from "./components/ExpenseStats";
+import Guest from "./components/Guest";
+import RecordChart from "./components/RecordChart";
+import RecordHistory from "./components/RecordHistory";
 
 export default async function HomePage() {
   const user = await currentUser();
@@ -22,10 +23,12 @@ export default async function HomePage() {
               <div className="flex flex-col sm:flex-row items-center sm:items-start gap-5 sm:gap-6">
                 {/* Profile */}
                 <div className="relative flex-shrink-0">
-                  <img
+                  <Image
                     src={user.imageUrl}
                     alt={`${user.firstName}'s profile`}
-                    className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl border-2 border-white dark:border-gray-600 shadow-lg"
+                    width={80}
+                    height={80}
+                    className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl border-2 border-white dark:border-gray-600 shadow-lg object-cover"
                   />
                   <div className="absolute -bottom-1 -right-1 w-5 h-5 sm:w-6 sm:h-6 bg-gradient-to-r from-green-400 to-green-500 rounded-full border-2 border-white dark:border-gray-800 flex items-center justify-center">
                     <UserCheck className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-white" />
@@ -43,9 +46,9 @@ export default async function HomePage() {
                     </h2>
                   </div>
                   <p className="text-sm sm:text-base text-gray-600 dark:text-gray-400 mb-5 max-w-lg mx-auto sm:mx-0">
-                    Here’s a quick snapshot of your recent financial activity.
-                    Stay informed, analyze trends, and optimize your budget with
-                    ease.
+                    Here&apos;s a quick summary of your latest financial
+                    activities. Stay updated, monitor trends, and manage your
+                    budget smartly.
                   </p>
 
                   {/* Stats */}

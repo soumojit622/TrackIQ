@@ -110,21 +110,6 @@ const AIInsights = () => {
     loadInsights();
   }, []);
 
-  const getInsightIcon = (type: string) => {
-    switch (type) {
-      case "warning":
-        return "⚠️";
-      case "success":
-        return "✅";
-      case "tip":
-        return "💡";
-      case "info":
-        return "ℹ️";
-      default:
-        return "🤖";
-    }
-  };
-
   const getInsightColors = (type: string) => {
     switch (type) {
       case "warning":
