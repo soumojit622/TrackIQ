@@ -1,4 +1,4 @@
-# 💰 TrackerIQ
+# 💰 TrackIQ
 
 > Your intelligent companion for tracking, analyzing, and optimizing expenses — powered by AI.
 
@@ -12,9 +12,9 @@
 
 ---
 
-## 🧠 What is TrackerIQ?
+## 🧠 What is TrackIQ?
 
-**TrackerIQ** is a modern, AI-powered full-stack web app that empowers users to monitor and optimize their personal finances. Built with the latest stack (Next.js 15, Prisma, Neon DB, Clerk, OpenRouter), TrackerIQ delivers an intelligent and elegant experience — backed by real-time AI insights.
+**TrackIQ** is a modern, AI-powered full-stack web app that empowers users to monitor and optimize their personal finances. Built with the latest stack (Next.js 15, Prisma, Neon DB, Clerk, OpenRouter), TrackIQ delivers an intelligent and elegant experience — backed by real-time AI insights.
 
 ---
 
@@ -35,7 +35,7 @@
 
 ## 🖼️ Live Demo
 
-> 🔗 [Try TrackerIQ Live →](https://track-iq.vercel.app)
+> 🔗 [Try TrackIQ Live →](https://track-iq.vercel.app)
 
 ![Preview](https://github.com/soumojit622/TrackIQ/blob/master/public/banner.jpg)
 
@@ -58,7 +58,7 @@
 
 ## 🔍 AI Insights Examples
 
-Backed by ChatGPT through OpenRouter — TrackerIQ detects patterns and gives you:
+Backed by ChatGPT through OpenRouter — TrackIQ detects patterns and gives you:
 
 > 💬 _“Your travel spending increased by 38% this month.”_  
 > 📉 _“You've stayed under budget for 3 weeks straight — great job!”_  
@@ -100,7 +100,7 @@ Backed by ChatGPT through OpenRouter — TrackerIQ detects patterns and gives yo
 
 ## ❓ FAQ
 
-> **Q: Is TrackerIQ production-ready?**  
+> **Q: Is TrackIQ production-ready?**  
 > ✅ Yes, fully responsive, AI-powered, and deployable on Vercel.
 
 > **Q: Can I self-host with a custom DB?**  
