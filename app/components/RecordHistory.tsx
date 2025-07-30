@@ -1,7 +1,7 @@
 import getRecords from "@/app/actions/getRecords";
 import { Record } from "@/types/Record";
+import { AlertTriangle, BarChart, NotebookPen } from "lucide-react";
 import RecordItem from "./RecordItem";
-import { FileText, AlertTriangle, NotebookPen, BarChart } from "lucide-react";
 
 const RecordHistory = async () => {
   const { records, error } = await getRecords();
